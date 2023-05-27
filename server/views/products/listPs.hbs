@@ -1,0 +1,37 @@
+{{>header}}
+<div class="row">
+  <h4 style="text-align: center; padding: 20px; font-weight: bold;">Danh sách sản phẩm</h4>
+  <div class="col-sm-6">
+  </div>
+</div>
+<div class="row my-3">
+  {{!-- product single --}}
+  {{#each products}}
+  <div class="card col-sm-3 m-3" style="width: 18rem;">
+    <div class="card-img-box text-center">
+      {{#if this.image}}
+      <img class="card-img-top" src="{{this.image}}" alt="">
+      {{else }}
+      <img class="card-img-top" src="/img/product/product01.png">
+      {{/if}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{this.name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <h6 class="card-subtitle">đánh giá: <span style="color:#d6ba00">{{this.rating}}</span> sao</h6>
+      </li>
+      <li class="list-group-item card-subtitle">
+        <h6 class="card-subtitle">giá tiền: <span style="color:crimson">{{this.price}}</span> đồng</h6>
+      </li>
+      <li class=" list-group-item">Số lượng: {{this.countInStock}}</li>
+    </ul>
+    <div class="card-body text-center">
+      <a href="/products/edit/{{this._id}}" class="btn btn-success btn-sm mx-3">Sửa</a>
+      <a href="/products/delete/{{this._id}}" onclick="return confirm("Xóa sản phẩm?")" class="btn btn-danger btn-sm mx-3">Xóa</a>
+    </div>
+  </div>
+  {{/each }}
+
+</div>

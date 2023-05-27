@@ -1,0 +1,45 @@
+{{>header}}
+<div class="container-fluid">
+    <h4 class="text-primary">{{viewTitle}}</h4>
+    <form action="/products/addProduct" method="POST" autocomplete="false" enctype="multipart/form-data">
+        <input type="hidden" name="_id" value="{{product._id}}" />
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label for="" class="form-label">Tên sản phẩm</label>
+                <input type="text" name="name" id="fullname" class="form-control"
+                    value="{{product.name}}" />
+            </div>
+            <div class="col-md-6">
+                <label for="" class="form-label">Đánh giá ban đầu</label>
+                <input type="number" name="rating" class="form-control"/>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-6">
+                <label for="" class="form-label">Giá sản phẩm</label>
+                <input type="number" name="price" id="price" class="form-control"
+                    value="{{product.price}}" />
+            </div>
+            <div class="col-md-6">
+                <label for="" class="form-label">Số lượng</label>
+                <input type="number" name="countInStock" id="countInStock" class="form-control"
+                     value="{{product.countInStock}}" />
+            </div>
+        </div>
+        <div class="row my-4">
+            <label for="" class="form-label">Hình ảnh</label>
+            <input type="file" name="image" id="imgUser" class="form-control" placeholder="Chỉ chọn 1 ảnh"/>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                <label for="" class="form-label">Chi tiết sản phẩm</label>
+                <textarea class="form-control" name="description" id="description" rows="7"
+                    value="{{product.description}}"></textarea>
+            </div>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto mt-4">
+            <button class="btn btn-primary" type="submit">Xác nhận</button>
+        </div>
+    </form>
+
+</div>
